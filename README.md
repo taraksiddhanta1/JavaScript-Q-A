@@ -301,9 +301,15 @@ You need to load a polyfill if ES6 is not supported
 ### 28. ** What is the purpose of void 0
 Void(0) is used to prevent the page from refreshing. This will be helpful to eliminate the unwanted side-effect, because it will return the undefined primitive value. It is commonly used for HTML documents that use href="JavaScript:Void(0);" within an <a> element. i.e, when you click a link, the browser loads a new page or refreshes the same page. But this behavior will be prevented using this expression. For example, the below link notify the message without reloading the page
 
-===========================================================================
+
+
+
+
+
+
+=====================
 Top 50 java script interview question for 2025 with conceptual answers based on "event" in java script with examples.
-===========================================================================
+=====================
 
 Here's a list of top JavaScript interview questions centered around the concept of "events" with conceptual explanations and examples:
 
@@ -573,9 +579,9 @@ Here's a list of top JavaScript interview questions centered around the concept 
    - Bubble versions of `focus` and `blur`, useful for delegation.
 
 -
-=============================================================================
-**Top 50 JavaScript Interview Questions** based on **functions** with conceptual explanations and examples:
-=============================================================================
+=========================
+### Top 50 JavaScript Interview Questions** based on **functions** with conceptual explanations and examples:
+==========================
 
 ### 1. **What is a function in JavaScript?**
    - A function is a block of code designed to perform a particular task. Functions can take input (parameters) and return output (result).
@@ -1476,9 +1482,12 @@ Here are **Top 50 JavaScript Interview Questions on "Arrays and Array Methods"**
    ```
 
 
+
+
 ========================
-List of all in build Arrow Functions in Javascript
+List of all in build in  Array Functions in Javascript
 ========================
+
 JavaScript itself does not have a built-in list of "arrow functions" because arrow functions are a feature of JavaScript syntax, not specific pre-defined functions. However, arrow functions are commonly used with several built-in JavaScript functions and methods that accept functions as arguments. Below is a list of commonly used **JavaScript array methods** and other methods that frequently use **arrow functions**.
 
 ### 1. **Array.prototype.map()**
@@ -1985,6 +1994,197 @@ JavaScript interview questions on "Objects" in JavaScript, with conceptual expla
 
 ### 37. **What are the performance concerns when dealing with large objects?**
    - Large objects may affect performance, particularly when using methods that require deep copies or when constantly accessing large property sets.
+
+
+
+==================
+JavaScript built-in object methods, with conceptual explanations and examples
+===================
+Here is a list of **built-in Object methods** in JavaScript, explaining how they work with short examples:
+
+### 1. **Object.assign()**
+   - **How it works**: Copies the values of all enumerable properties from one or more source objects to a target object.
+   - **Example**:
+   ```javascript
+   const obj1 = { a: 1, b: 2 };
+   const obj2 = { b: 3, c: 4 };
+   const result = Object.assign({}, obj1, obj2);
+   console.log(result);  // Output: { a: 1, b: 3, c: 4 }
+   ```
+
+### 2. **Object.create()**
+   - **How it works**: Creates a new object with the specified prototype object and properties.
+   - **Example**:
+   ```javascript
+   const person = { name: "John", greet() { console.log("Hello " + this.name); } };
+   const newPerson = Object.create(person);
+   newPerson.name = "Alice";
+   newPerson.greet();  // Output: "Hello Alice"
+   ```
+
+### 3. **Object.defineProperty()**
+   - **How it works**: Adds a property to an object or modifies an existing property and allows you to define specific property attributes (such as writable, enumerable, etc.).
+   - **Example**:
+   ```javascript
+   const obj = {};
+   Object.defineProperty(obj, 'name', {
+     value: 'Alice',
+     writable: false,
+     enumerable: true,
+     configurable: true
+   });
+   console.log(obj.name);  // Output: "Alice"
+   ```
+
+### 4. **Object.defineProperties()**
+   - **How it works**: Adds or modifies multiple properties of an object.
+   - **Example**:
+   ```javascript
+   const obj = {};
+   Object.defineProperties(obj, {
+     name: { value: "Alice", writable: true },
+     age: { value: 30, writable: false }
+   });
+   console.log(obj.name);  // Output: "Alice"
+   ```
+
+### 5. **Object.freeze()**
+   - **How it works**: Freezes an object, making it immutable (i.e., it cannot be modified).
+   - **Example**:
+   ```javascript
+   const obj = { name: "Alice" };
+   Object.freeze(obj);
+   obj.name = "Bob";  // This will not change the value of name
+   console.log(obj.name);  // Output: "Alice"
+   ```
+
+### 6. **Object.getOwnPropertyDescriptor()**
+   - **How it works**: Returns a property descriptor for a specific property of an object.
+   - **Example**:
+   ```javascript
+   const obj = { name: "Alice" };
+   const descriptor = Object.getOwnPropertyDescriptor(obj, "name");
+   console.log(descriptor);  // Output: { value: 'Alice', writable: true, enumerable: true, configurable: true }
+   ```
+
+### 7. **Object.getOwnPropertyDescriptors()**
+   - **How it works**: Returns all property descriptors of an object.
+   - **Example**:
+   ```javascript
+   const obj = { name: "Alice", age: 30 };
+   const descriptors = Object.getOwnPropertyDescriptors(obj);
+   console.log(descriptors);
+   // Output: { name: { value: 'Alice', writable: true, enumerable: true, configurable: true },
+   //            age: { value: 30, writable: true, enumerable: true, configurable: true } }
+   ```
+
+### 8. **Object.getOwnPropertyNames()**
+   - **How it works**: Returns an array of all own property names (keys) of an object.
+   - **Example**:
+   ```javascript
+   const obj = { name: "Alice", age: 30 };
+   const keys = Object.getOwnPropertyNames(obj);
+   console.log(keys);  // Output: ["name", "age"]
+   ```
+
+### 9. **Object.getPrototypeOf()**
+   - **How it works**: Returns the prototype (i.e., the internal `[[Prototype]]` property) of the specified object.
+   - **Example**:
+   ```javascript
+   const obj = { name: "Alice" };
+   const proto = Object.getPrototypeOf(obj);
+   console.log(proto);  // Output: {} (an empty object, as the prototype of obj is Object.prototype)
+   ```
+
+### 10. **Object.is()**
+   - **How it works**: Compares two values for equality, similar to `===`, but with some differences (e.g., it handles `NaN` and `-0` differently).
+   - **Example**:
+   ```javascript
+   console.log(Object.is(1, 1));  // Output: true
+   console.log(Object.is(1, '1'));  // Output: false
+   console.log(Object.is(NaN, NaN));  // Output: true
+   ```
+
+### 11. **Object.isExtensible()**
+   - **How it works**: Returns `true` if the object is extensible (i.e., properties can be added to it), otherwise `false`.
+   - **Example**:
+   ```javascript
+   const obj = {};
+   console.log(Object.isExtensible(obj));  // Output: true
+   Object.preventExtensions(obj);
+   console.log(Object.isExtensible(obj));  // Output: false
+   ```
+
+### 12. **Object.isFrozen()**
+   - **How it works**: Returns `true` if the object is frozen (i.e., its properties cannot be modified).
+   - **Example**:
+   ```javascript
+   const obj = { name: "Alice" };
+   Object.freeze(obj);
+   console.log(Object.isFrozen(obj));  // Output: true
+   ```
+
+### 13. **Object.isSealed()**
+   - **How it works**: Returns `true` if the object is sealed (i.e., its properties cannot be deleted and are not configurable).
+   - **Example**:
+   ```javascript
+   const obj = { name: "Alice" };
+   Object.seal(obj);
+   console.log(Object.isSealed(obj));  // Output: true
+   ```
+
+### 14. **Object.keys()**
+   - **How it works**: Returns an array of the object's own enumerable property names (keys).
+   - **Example**:
+   ```javascript
+   const obj = { name: "Alice", age: 30 };
+   console.log(Object.keys(obj));  // Output: ["name", "age"]
+   ```
+
+### 15. **Object.values()**
+   - **How it works**: Returns an array of the object's own enumerable property values.
+   - **Example**:
+   ```javascript
+   const obj = { name: "Alice", age: 30 };
+   console.log(Object.values(obj));  // Output: ["Alice", 30]
+   ```
+
+### 16. **Object.seal()**
+   - **How it works**: Seals an object, making its properties non-configurable (i.e., no new properties can be added or deleted).
+   - **Example**:
+   ```javascript
+   const obj = { name: "Alice" };
+   Object.seal(obj);
+   obj.age = 30;  // This will not add the property 'age'
+   delete obj.name;  // This will not delete the 'name' property
+   console.log(obj);  // Output: { name: "Alice" }
+   ```
+
+### 17. **Object.preventExtensions()**
+   - **How it works**: Prevents new properties from being added to an object.
+   - **Example**:
+   ```javascript
+   const obj = { name: "Alice" };
+   Object.preventExtensions(obj);
+   obj.age = 30;  // This will not add the property 'age'
+   console.log(obj);  // Output: { name: "Alice" }
+   ```
+
+### 18. **Object.values()**
+   - **How it works**: Returns an array of an object's values.
+   - **Example**:
+   ```javascript
+   const obj = { name: "Alice", age: 30 };
+   console.log(Object.values(obj));  // Output: ["Alice", 30]
+   ```
+
+### Conclusion:
+These built-in object methods provide a range of functionalities for working with objects in JavaScript, such as creating, modifying, comparing, and inspecting objects. Understanding these methods helps to effectively manage objects and their properties in JavaScript.
+
+
+
+
+
 
 
 
